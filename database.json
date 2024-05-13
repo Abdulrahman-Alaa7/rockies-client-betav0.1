@@ -1,0 +1,110 @@
+{
+  "Single_Sandwiches": [
+    {
+      "id": "1",
+      "title": "Classic Cheesy",
+      "description": "Chicken breast, tomatoes, cheesy sauce",
+      "price": 125
+    },
+    {
+      "id": "2",
+      "title": "Hot Honey",
+      "description": "Chicken breast,hot sweettened chili sauce, lettuce, tomatoes, jalapeno, spiciness level 'hot'",
+      "price": 130
+    },
+    {
+      "id": "3",
+      "title": "Buffalo Rocky",
+      "description": "Chicken breast, lettuce, tomatoes, jalapeno, spiciness level 'medium'",
+      "price": 130
+    },
+    {
+      "id": "4",
+      "title": "Cream Rocky",
+      "description": "Chicken breast,cheese, lettuce, tomatoes, ranch sauce, cheddar sauce",
+      "price": 135
+    }
+  ],
+  "Double_Sandwiches": [
+    {
+      "id": "5",
+      "title": "Double Hot Rocky",
+      "description": "Buffalo Rocky or Hot Honey",
+      "price": 175
+    },
+    {
+      "id": "6",
+      "title": "Double Creamy Rocky",
+      "description": "Creamy Rocky or Classic Cheese",
+      "price": 185
+    }
+  ],
+  "Appetizer": [
+    {
+      "id": "7",
+      "title": "Loaded Fries",
+      "description": "Chicken , Cheese, Jalapeno 'optional'",
+      "price": 80
+    },
+    {
+      "id": "8",
+      "title": "Cheesy Fries",
+      "price": 50
+    },
+    {
+      "id": "9",
+      "title": "Fries",
+      "price": 40
+    },
+    {
+      "id": "10",
+      "title": "Mozzarella Sticks",
+      "price": 50
+    },
+    {
+      "id": "11",
+      "title": "Tenders",
+      "description": "Buffalo or Sweet Chili",
+      "price": 80
+    }
+  ],
+  "Combo_Extra": [
+    {
+      "id": "12",
+      "title": "Combo Single",
+      "price": 180
+    },
+    {
+      "id": "13",
+      "title": "Combo Double",
+      "price": 215
+    },
+    {
+      "id": "14",
+      "title": "Extra Sauce",
+      "price": 10
+    }
+  ],
+  "Drinks_Desserts": [
+    {
+      "id": "15",
+      "title": "Ice Cream",
+      "price": 25
+    },
+    {
+      "id": "16",
+      "title": "Soft Drinks",
+      "price": 20
+    },
+    {
+      "id": "17",
+      "title": "Red Bull",
+      "price": 50
+    },
+    {
+      "id": "18",
+      "title": "Water",
+      "price": 15
+    }
+  ]
+}
