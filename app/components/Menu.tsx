@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Concert_One } from "next/font/google";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import { RiHeartAdd2Line } from "react-icons/ri";
@@ -36,7 +35,6 @@ import {
 } from "../../components/ui/carousel";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -49,16 +47,11 @@ import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
 import { toast } from "sonner";
 
-const concert_One = Concert_One({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext"],
-});
-
 const Menu = ({ menu }: any) => {
   const [order, setOrder] = useState<Array<any>>([]);
   const [carousel, setCarousel] = useState<boolean>(false);
   const [isValid, setIsValid] = useState(false);
+  const [isSend, setIsSend] = useState(false);
 
   const [itemQuantities, setItemQuantities] = useState<{
     [key: string]: number;
@@ -196,6 +189,7 @@ const Menu = ({ menu }: any) => {
       };
 
       toast.success("Order sended successfully");
+      setIsSend(true);
     } else {
       toast.error("Something went wrong!");
     }
@@ -207,7 +201,7 @@ const Menu = ({ menu }: any) => {
       id="menu"
     >
       <h2
-        className={`${concert_One.className} text-[25px] sm:text-[30px] text-primary font-bold text-center py-1 mt-1 mb-10 border  border-[#ccc] dark:border-[#9e9e9e29] rounded-full sm:w-[40%] w-[100%] mx-auto transition-all`}
+        className={`font-semibold tracking-tight text-[25px] sm:text-[30px] text-primary  text-center py-1 mt-1 mb-10 border  border-[#ccc] dark:border-[#9e9e9e29] rounded-full sm:w-[40%] w-[100%] mx-auto transition-all`}
       >
         Rockies&#39;s Menu
       </h2>
@@ -354,6 +348,7 @@ const Menu = ({ menu }: any) => {
                         type="submit"
                         onClick={handleSubmit}
                         className="w-full"
+                        disabled={isSend}
                       >
                         Send order
                       </Button>
@@ -375,7 +370,7 @@ const Menu = ({ menu }: any) => {
             {menu[category].map((item: any) => (
               <div
                 key={item.id}
-                className={`relative bg-gradient-to-b from-red-800 to-red-900 shadow p-4 rounded-3xl transition-all hover:scale-105 hover:from-red-700 hover:to-red-800`}
+                className={`relative bg-gradient-to-b from-red-800 to-red-900 shadow p-4 rounded-3xl transition-all md:hover:scale-105 md:hover:from-red-700 md:hover:to-red-800`}
               >
                 {item.imgSrc && (
                   <div
@@ -407,7 +402,7 @@ const Menu = ({ menu }: any) => {
                   >
                     <Button
                       type="button"
-                      className={`absolute bottom-4 flex items-center gap-1 px-12 transition-all hover:scale-110`}
+                      className={`absolute bottom-4 flex items-center gap-1 px-12 transition-all md:hover:scale-110`}
                       onClick={() => setCarousel(!carousel)}
                     >
                       {carousel ? (
@@ -449,7 +444,7 @@ const Menu = ({ menu }: any) => {
                                     {itemQuantities[el.id] >= 1 ? (
                                       <Button
                                         type="button"
-                                        className={` absolute bottom-1 flex items-center gap-1 px-9 transition-all hover:scale-110`}
+                                        className={` absolute bottom-1 flex items-center gap-1 px-9 transition-all md:hover:scale-110`}
                                         onClick={() => deleteFromList(el.id)}
                                       >
                                         <PiMinusCircleLight size={25} />
@@ -458,7 +453,7 @@ const Menu = ({ menu }: any) => {
                                     ) : (
                                       <Button
                                         type="button"
-                                        className={` absolute bottom-3 flex items-center gap-1 px-12 transition-all hover:scale-110`}
+                                        className={` absolute bottom-3 flex items-center gap-1 px-12 transition-all md:hover:scale-110`}
                                         onClick={() => AddToList(item, el)}
                                       >
                                         <RiHeartAdd2Line size={25} />
@@ -516,7 +511,7 @@ const Menu = ({ menu }: any) => {
                     {itemQuantities[item.id] >= 1 ? (
                       <Button
                         type="button"
-                        className={`  absolute bottom-4 flex items-center gap-1 px-12 transition-all hover:scale-110`}
+                        className={` absolute bottom-4 flex items-center gap-1 px-12 transition-all md:hover:scale-110`}
                         onClick={() => deleteFromList(item.id)}
                       >
                         <PiMinusCircleLight size={25} />
@@ -525,7 +520,7 @@ const Menu = ({ menu }: any) => {
                     ) : (
                       <Button
                         type="button"
-                        className={`  absolute bottom-4 flex items-center gap-1 px-12 transition-all hover:scale-110`}
+                        className={`  absolute bottom-4 flex items-center gap-1 px-12 transition-all md:hover:scale-110`}
                         onClick={() => AddToList(item)}
                       >
                         <RiHeartAdd2Line size={25} />

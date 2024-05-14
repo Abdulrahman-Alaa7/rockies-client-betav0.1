@@ -1,17 +1,10 @@
 import React, { FC } from "react";
-import { Concert_One } from "next/font/google";
 import { TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import BurgerGIF from "../../public/assets/Hamburger.gif";
 import BurgerGIFDark from "../../public/assets/Hamburger-dark.gif";
 import Link from "next/link";
 import { IoFastFoodOutline } from "react-icons/io5";
-
-const concert_One = Concert_One({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext"],
-});
 
 type Props = {};
 
@@ -39,7 +32,7 @@ const Hero: FC<Props> = () => {
       <h1 className={`text-[35px] font-bold`}>
         Welcome to{" "}
         <span
-          className={`bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent ${concert_One.className}`}
+          className={`bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent font-semibold tracking-tight`}
         >
           Rockies
         </span>

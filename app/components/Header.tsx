@@ -3,7 +3,6 @@ import React, { FC, useState } from "react";
 import Image from "next/image";
 import RockiesPic from "../../public/assets/rockies-img.jpg";
 import Link from "next/link";
-import { Concert_One } from "next/font/google";
 import { ThemeSwitcher } from "../utils/ThemeSwitcher";
 import { PiLinkSimpleHorizontal } from "react-icons/pi";
 import { Copy } from "lucide-react";
@@ -24,12 +23,6 @@ import { Label } from "../../components/ui/label";
 
 type Props = {};
 
-const concert_One = Concert_One({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext"],
-});
-
 const Header: FC<Props> = () => {
   const [copied, setCopied] = useState<boolean>(false);
 
@@ -44,7 +37,7 @@ const Header: FC<Props> = () => {
     <header className="fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-background py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
       <div className="px-2">
         <div className="flex items-center justify-between">
-          <div className="flex shrink-0">
+          <div className="flex s">
             <Link
               aria-current="page"
               className="flex items-center gap-1"
@@ -58,13 +51,13 @@ const Header: FC<Props> = () => {
                 height={100}
               />
               <p
-                className={`text-primary ${concert_One.className} text-[30px] !leading-tight bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent`}
+                className={`font-semibold text-[25px] tracking-tight bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent`}
               >
                 Rockies
               </p>
             </Link>
           </div>
-          <div className="flex items-center justify-end gap-1 mt-1">
+          <div className="flex items-center justify-end gap-1 ">
             <Link
               className="inline-block rounded-lg px-2 py-1  text-sm font-medium text-gray-900 dark:text-gray-100 transition-all duration-200 hover:bg-gray-100 hover:!text-gray-900"
               href="#menu"

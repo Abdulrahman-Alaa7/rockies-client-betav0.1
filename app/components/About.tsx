@@ -1,18 +1,12 @@
 import React from "react";
-import { Concert_One } from "next/font/google";
 
-const concert_One = Concert_One({
-  weight: ["400"],
-  style: ["normal"],
-  subsets: ["latin", "latin-ext"],
-});
 type Props = {};
 
 const About = (props: Props) => {
   return (
     <div className="mx-3 py-8 sm:container mb-6" id="about">
       <h2
-        className={`${concert_One.className} text-[25px] sm:text-[30px] text-primary font-bold text-center py-1 mt-1 mb-6 border  border-[#ccc] dark:border-[#9e9e9e29] rounded-full sm:w-[40%] w-[100%] mx-auto transition-all`}
+        className={`font-semibold tracking-tight text-[25px] sm:text-[30px] text-primary  text-center py-1 mt-1 mb-6 border  border-[#ccc] dark:border-[#9e9e9e29] rounded-full sm:w-[40%] w-[100%] mx-auto transition-all`}
       >
         About Rockies
       </h2>
