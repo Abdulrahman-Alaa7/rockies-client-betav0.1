@@ -93,7 +93,7 @@ const Header: FC<Props> = () => {
                 }}
               >
                 <DialogHeader>
-                  <DialogTitle>Share Rockies&#39;s links</DialogTitle>
+                  <DialogTitle> Rockies&#39;s links</DialogTitle>
                   <DialogDescription>
                     Share Rockies&#39;s links with your friends.
                   </DialogDescription>

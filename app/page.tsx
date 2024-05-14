@@ -184,7 +184,7 @@ export default function Home() {
     <div>
       <Heading
         title="Rockies"
-        description="Rockies is a special truck food."
+        description="Rockies is a special food truck."
         keywords="Food, Burger, Ice cream and more"
       />
       <Header />

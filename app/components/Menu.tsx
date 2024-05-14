@@ -230,7 +230,7 @@ const Menu = ({ menu }: any) => {
                     className="!text-left mx-auto flex justify-start items-start "
                   >
                     Table&#39; number
-                    <span className="text-primary mx-2"> (requird)</span>
+                    <span className="text-primary mx-2"> (required)</span>
                   </Label>
                   <Input
                     type="number"
@@ -270,7 +270,7 @@ const Menu = ({ menu }: any) => {
                   <Textarea
                     id="note"
                     className={`col-span-3 mt-2 resize-none `}
-                    placeholder="notes about your order 'optional' "
+                    placeholder="notes about your order"
                     value={orderInfo.note}
                     onChange={(e: any) =>
                       setOrderInfo({
@@ -350,7 +350,7 @@ const Menu = ({ menu }: any) => {
                         className="w-full"
                         disabled={isSend}
                       >
-                        Send order
+                        {isSend ? "Order Sended" : "Send order"}
                       </Button>
                     </DialogFooter>
                   </DialogContent>
