@@ -79,11 +79,23 @@ const Header: FC<Props> = () => {
                   <PiLinkSimpleHorizontal size={25} className={``} />
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md !rounded-3xl w-[95%]">
+              <DialogContent
+                className="sm:max-w-md !rounded-3xl w-[95%]"
+                onOpenAutoFocus={() => {
+                  const inputElement = document.getElementById("link");
+                  if (
+                    inputElement &&
+                    inputElement instanceof HTMLInputElement
+                  ) {
+                    inputElement.focus();
+                    inputElement.selectionStart = inputElement.selectionEnd = 0;
+                  }
+                }}
+              >
                 <DialogHeader>
                   <DialogTitle>Share Rockies&#39;s links</DialogTitle>
                   <DialogDescription>
-                    Anyone who has this link will be able to view this.
+                    Share Rockies&#39;s links with your friends.
                   </DialogDescription>
                 </DialogHeader>
                 <div className="flex items-center space-x-2">
@@ -95,6 +107,7 @@ const Header: FC<Props> = () => {
                       id="link"
                       defaultValue="https://www.instagram.com/rockies.eg/"
                       readOnly
+                      autoFocus={false}
                     />
                   </div>
                   <Button
