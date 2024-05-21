@@ -14,6 +14,7 @@ export default function Home() {
         title: "Classic Cheesy",
         description: "Chicken breast, tomatoes, cheesy sauce",
         price: 125,
+        offer: true,
       },
       {
         id: "2",

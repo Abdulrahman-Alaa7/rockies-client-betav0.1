@@ -7,7 +7,7 @@ import { PiMinusCircleLight } from "react-icons/pi";
 import { BiCarousel } from "react-icons/bi";
 import { GoEyeClosed } from "react-icons/go";
 import { TbShoppingCartHeart } from "react-icons/tb";
-import { Plus } from "lucide-react";
+import { BadgeCheck, Plus } from "lucide-react";
 import { Minus } from "lucide-react";
 import {
   Drawer,
@@ -46,6 +46,7 @@ import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
 import { toast } from "sonner";
+import { Badge } from "../../components/ui/badge";
 
 const Menu = ({ menu }: any) => {
   const [order, setOrder] = useState<Array<any>>([]);
@@ -391,9 +392,22 @@ const Menu = ({ menu }: any) => {
                 {item.description && (
                   <p className="text-gray-300 mb-3 px-1">{item.description}</p>
                 )}
+                {item.offer && (
+                  <div
+                    className={`absolute top-3 left-3 flex justify-center items-center`}
+                  >
+                    <Badge
+                      className={`bg-slate-900 dark:text-white/90 font-semibold flex gap-1 items-center text-[14px]`}
+                    >
+                      <BadgeCheck color="white" size={19} />
+                      Offer
+                    </Badge>
+                  </div>
+                )}
                 <p className="text-[#ffffffcc] p-1 font-bold">
                   EGP {item.price}
                 </p>
+
                 {item.typesRec ? (
                   <div
                     className={`flex justify-center items-center ${
